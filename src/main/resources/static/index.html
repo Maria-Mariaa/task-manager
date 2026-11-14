@@ -213,12 +213,7 @@
         await request(`${API}/${editingTask.id}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            title,
-            priority: editingTask.priority || 'medium',
-            category: editingTask.category || 'Личное',
-            dueDate: editingTask.dueDate || null
-          })
+          body: JSON.stringify({ title })
         });
         editDialog.close();
         editingTask = null;
